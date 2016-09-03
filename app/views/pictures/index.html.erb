@@ -1,0 +1,13 @@
+  <%= link_to "作成", new_picture_path %>
+
+<% @pictures.each do |picture| %>
+  <p><%= picture.title %></p>
+　<% if picture.image? %>
+　　<%= image_tag picture.image.to_s ,size:"200x200" %>
+　<% else %>
+　　<%= image_tag 'noimage.gif' %>
+　<% end %>
+  <%= link_to "編集", edit_picture_path(picture.id) %>
+  <%= link_to "削除", picture_path(picture.id),  method: :delete, data: { confirm: '本当に削除していいですか？'} %>
+
+<% end %>
