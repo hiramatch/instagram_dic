@@ -1,10 +1,2 @@
-<%= form_for(@picture) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
-　<%= f.label :image %>
-  <br>
-　　<%= f.file_field :image %>
-  <br>
-  <%= f.submit %>
-<% end %>
+<h2>投稿する</h2>
+<%= render 'form' %>

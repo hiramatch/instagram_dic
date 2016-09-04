@@ -1,12 +1,2 @@
-<%= form_for(@picture) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
-  <br>
-　<% if @picture.image? %>
-　　<%= image_tag @picture.image.to_s ,size:"200x200" %>
-　<% else %>
-　　<%= image_tag 'noimage.gif' %>
-　<% end %>
-  <%= f.submit %>
-<% end %>
+<h2>編集する</h2>
+<%= render 'form' %>
