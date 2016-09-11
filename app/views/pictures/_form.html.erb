@@ -2,25 +2,24 @@
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
     <%= form_for(@picture) do |f| %>
       <% if @picture.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= @picture.errors.count %>件のエラーがあります。</h2>
+         <div id="error_explanation">
+           <h5><%= @picture.errors.count %>件のエラーがあります。</h5>
 
-          <ul>
-              <% @picture.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-         </ul>
-        </div>
-      <% end %>
-    <% end %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+           <ul>
+               <% @picture.errors.full_messages.each do |msg| %>
+               <li><%= msg %></li>
+               <% end %>
+           </ul>
+         </div>
+       <% end %>
+      <div class="field">
+        <%= f.text_field :title, autofocus: true, class: "form-control", placeholder: "タイトル" %>
+      </div>
 
-    <br>
-　   <%= f.label :image %>
-    <br>
-　  <%= f.file_field :image %>
-    <br>
-    <%= f.submit %>
+      <div class="field">
+         <%= f.file_field :image %>
+      </div>
+      <%= f.submit %>
     <% end %>
     <%= link_to "一覧画面にもどる", pictures_path %>
   </div>
