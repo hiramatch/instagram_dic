@@ -1,14 +1,18 @@
- <%= notice %>
-  <%= link_to "作成", new_picture_path %>
-
-<% @pictures.each do |picture| %>
-  <p><%= picture.title %></p>
-　<% if picture.image? %>
-　　<%= image_tag picture.image.to_s ,size:"200x200" %>
-　<% else %>
-　　<%= image_tag 'noimage.gif' %>
-　<% end %>
-  <%= link_to "編集", edit_picture_path(picture.id) %>
-  <%= link_to "削除", picture_path(picture.id),  method: :delete, data: { confirm: '本当に削除していいですか？'} %>
-
-<% end %>
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <p><%= notice %></p>
+    <%= link_to "写真を投稿する", new_picture_path , class: 'btn btn-default' %>
+    <% @pictures.each do |picture| %>
+      <h5><%= picture.title %></h5>
+　    <% if picture.image? %>
+　　    <%= image_tag picture.image.to_s ,size:"200x200" %>
+　    <% else %>
+　　    <%= image_tag 'noimage.gif' %>
+　    <% end %>
+      <div hoge>
+       <%= link_to "編集", edit_picture_path(picture.id), class: 'btn btn-default btn-sm btn-success' %>
+       <%= link_to "削除", picture_path(picture.id),  method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn-danger' %>
+      </div>
+   <% end %>
+  </div>
+ </div>

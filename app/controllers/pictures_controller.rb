@@ -2,14 +2,15 @@ class PicturesController < ApplicationController
   # before_action :authenticate_user!
 
 before_action :set_picture, only: [:edit, :update, :destroy]
+before_action :authenticate_user!
 
 def index
   @pictures = Picture.order(id: :desc)
   end
 
-  def new
+def new
    @picture = Picture.new
-  end
+end
 
 def create
   @picture = Picture.new(pictures_params)
