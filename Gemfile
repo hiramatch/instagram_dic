@@ -50,3 +50,6 @@ gem 'rmagick'
 gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'rails_12factor', group: :production
+gem 'therubyracer', platforms: :ruby
+gem 'rails_admin'
+gem 'cancan'

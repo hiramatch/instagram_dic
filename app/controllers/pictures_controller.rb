@@ -14,6 +14,7 @@ end
 
 def create
   @picture = Picture.new(pictures_params)
+  @picture.user_id = current_user.id
 # binding.pry
   if @picture.save
     redirect_to pictures_path, notice: "写真を作成しました！"
