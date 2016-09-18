@@ -1,17 +1,7 @@
 <!-- <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10"> -->
     <%= form_for(@picture) do |f| %>
-      <% if @picture.errors.any? %>
-         <div id="error_explanation">
-           <h5><%= @picture.errors.count %>件のエラーがあります。</h5>
-
-           <ul>
-               <% @picture.errors.full_messages.each do |msg| %>
-               <li><%= msg %></li>
-               <% end %>
-           </ul>
-         </div>
-       <% end %>
+      <%= f.error_messages! %>
       <div class="field">
         <%= f.text_field :title, autofocus: true, class: "form-control", placeholder: "タイトル" %>
       </div>

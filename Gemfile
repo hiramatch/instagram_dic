@@ -43,6 +43,7 @@ group :development, :test do
   gem 'spring'
 
   gem 'letter_opener_web'
+  gem 'dotenv-rails'
 end
 
 gem 'carrierwave'
@@ -53,3 +54,8 @@ gem 'rails_12factor', group: :production
 gem 'therubyracer', platforms: :ruby
 gem 'rails_admin'
 gem 'cancan'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'carrierwave'
+gem 'rmagick'

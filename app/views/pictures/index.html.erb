@@ -1,14 +1,20 @@
 <div class="container">
-  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+  <div class="wrapper col-md-6 col-md-offset-2 col-sm-10">
     <p><%= notice %></p>
     <%= link_to "写真を投稿する", new_picture_path , class: 'btn btn-default' %>
     <% @pictures.each do |picture| %>
-      <h5><%= picture.title %></h5>
+      <div title>
+
+        <h6 align="left"><%= profile_img(User.find(picture.user_id), "40x40") if profile_img(User.find(picture.user_id), "40x40") %><%= User.find(picture.user_id).name %>さんが投稿しました</h6>
+      </div>
+      <div>
+      </div>
 　    <% if picture.image? %>
-　　    <%= image_tag picture.image.to_s ,size:"200x200" %>
+　　    <%= image_tag picture.image.to_s ,width:"400" %>
 　    <% else %>
 　　    <%= image_tag 'noimage.gif' %>
 　    <% end %>
+      <h6 align="left"><%= picture.title %></h6>
       <div hoge>
        <%= link_to "編集", edit_picture_path(picture.id), class: 'btn btn-default btn-sm btn-success' %>
        <%= link_to "削除", picture_path(picture.id),  method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn-danger' %>
