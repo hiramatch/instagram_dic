@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
 
   PERMISSIBLE_ATTRIBUTES = %i(name avatar avatar_cache)
 
+ def after_sign_up_path_for(resource)
+    new_session_path(resource_name)
+  end
+
 private
 
     def configure_permitted_parameters

@@ -44,6 +44,8 @@ group :development, :test do
 
   gem 'letter_opener_web'
   gem 'dotenv-rails'
+  gem 'pry-rails'
+  gem 'better_errors'
 end
 
 gem 'carrierwave'
